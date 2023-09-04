@@ -1,0 +1,31 @@
+{
+  "name": "ntscli",
+  "version": "1.2.4",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aljosavister/ntscli.git"
+  },
+  "author": "Aljosa Vister",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "copyfiles": "^2.4.1",
+    "prettier": "^2.6.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.1.0",
+    "run-script-os": "^1.1.6",
+    "yaml": "^1.10.2"
+  },
+  "bin": {
+    "msp": "./dist/index.js"
+  }
+}
