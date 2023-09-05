@@ -1,6 +1,6 @@
 {
   "name": "ntscli",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
   "main": "dist/index.js",
   "scripts": {
