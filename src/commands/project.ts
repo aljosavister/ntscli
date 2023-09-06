@@ -9,9 +9,9 @@ export async function projectName(name: string) {
     return;
   }
 
-  console.log(chalk.green.bold(`Pull template-nodejs into ${name}`));
+  console.log(chalk.green.bold(`Pull template-ts-nodejs into ${name}`));
   try {
-    execSync(`git clone git@ssh.dev.azure.com:v3/sijit/common/template-nodejs ${name}`)
+    execSync(`git clone git@github.com:aljosavister/template-ts-nodejs.git ${name}`)
   } catch (error) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }
@@ -53,7 +53,7 @@ export async function projectName(name: string) {
   }
 
   console.log(chalk.green.bold(`Run Prettier on package.json`));
-  exec("./node_modules/prettier/bin-prettier.js -w package.json", (error, stdout, stderr) => {
+  exec("./node_modules/prettier/bin/prettier.cjs -w package.json", (error, stdout, stderr) => {
     if (error !== null) {
         console.log(chalk.red.bold(`Prettier error: ${error}`));
     }
@@ -61,7 +61,7 @@ export async function projectName(name: string) {
   
   console.log(chalk.green.bold(`Run Prettier on default.code-workspace`));
   try {
-    execSync("./node_modules/prettier/bin-prettier.js -w --parser json default.code-workspace")
+    execSync("./node_modules/prettier/bin/prettier.cjs -w --parser json default.code-workspace")
   } catch (error) {
     console.log(chalk.red.bold(`Prettier error: ${error}`));
   }
