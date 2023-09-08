@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "args": ["expressModule"],
+      "args": ["express","./example"],
       "preLaunchTask": "Build",
       "skipFiles": [
         "<node_internals>/**"
