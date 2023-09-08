@@ -11,7 +11,7 @@ export async function projectName(name: string) {
 
   console.log(chalk.green.bold(`Pull template-ts-nodejs into ${name}`));
   try {
-    execSync(`git clone git@github.com:aljosavister/template-ts-nodejs.git ${name}`)
+    execSync(`git clone https://github.com/aljosavister/template-ts-nodejs.git ${name}`)
   } catch (error) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }

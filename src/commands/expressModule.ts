@@ -30,7 +30,7 @@ export async function expressModule(path: string) {
 
   console.log(chalk.green.bold(`Pull module-ts-nodejs-express`));
   try {
-    execSync(`git clone git@github.com:aljosavister/module-ts-nodejs-express.git`)
+    execSync(`git clone https://github.com/aljosavister/module-ts-nodejs-express.git`)
   } catch (error) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }
