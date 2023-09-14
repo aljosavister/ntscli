@@ -1,23 +1,24 @@
-# NodeTypeScript command line
+# Create Node.js TypeScript project
 
-This commandline can be used to create empty nodejs projects with initial TypeScript configuration files.
+This commandline can be used to create an empty Node.js projects with initial TypeScript configuration files.
 
-A new project can be initialized with ntscli:
+A new project can be initialized with ntscli
 ```
 npx ntscli init myproject
 ```
 
-It will contain:
-- Project for vscode with launcher and tasks
-- Configured for ESM
-- With dependencies: dotenv, typescript, prettier, eslint, copyfiles
-- Start, build, lint scripts
+This template is a boilerplate for a new Node.js TypeScript project.
+
+It will contain
+- Project for Visual Studio Code with launcher and tasks
+- It is configured for ESM
+- The project depends on dotenv, typescript, prettier, eslint and copyfiles
+- Start and build script is using local tsc
 
 You can add additional module/s with the same command.
 
-For example to add express server with some api routes and default public folder, you can run
+For example to add express server with example api routes and default public folder, you can run
 ```
 cd myproject
 npx ntscli express .
 ```
-
