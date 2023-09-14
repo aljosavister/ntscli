@@ -8,6 +8,11 @@
   "engines": {
     "node": ">=16.20"
   },
+  "keywords": [
+    "typescript",
+    "project",
+    "express"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/tsc"
