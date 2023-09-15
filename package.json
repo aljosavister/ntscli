@@ -29,7 +29,6 @@
   "devDependencies": {
     "@types/copyfiles": "^2.4.1",
     "@types/node": "^20.5.9",
-    "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
   "dependencies": {
@@ -37,7 +36,8 @@
     "commander": "^11.0.0",
     "copyfiles": "^2.4.1",
     "run-script-os": "^1.1.6",
-    "yaml": "^2.3.2"
+    "yaml": "^2.3.2",
+    "prettier": "^3.0.3"
   },
   "bin": {
     "ntscli": "./dist/index.js"
