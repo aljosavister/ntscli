@@ -1,7 +1,7 @@
 {
   "name": "ntscli",
   "version": "1.2.19",
-  "description": "Nodejs and Typescript project creator with ability to add modules.",
+  "description": "Node.js and TypeScript project creator with ability to add modules.",
   "exports": "./dist/index.js",
   "main": "dist/index.js",
   "type": "module",
@@ -15,8 +15,10 @@
     "cli"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/tsc"
+    "build": "run-script-os",
+    "build:darwin:linux": "./node_modules/.bin/tsc",
+    "build:win32": "\\node_modules\\.bin\\tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
