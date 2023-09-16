@@ -12,7 +12,9 @@
     "typescript",
     "project",
     "express",
-    "cli"
+    "cli",
+    "docker",
+    "modules"
   ],
   "scripts": {
     "build": "run-script-os",
