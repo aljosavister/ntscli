@@ -21,3 +21,9 @@ For example to add express server with example api routes and default public fol
 cd myproject
 npx ntscli express .
 ```
+
+Docker module:
+```
+cd myproject
+npx ntscli docker .
+```

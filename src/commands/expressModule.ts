@@ -65,6 +65,13 @@ export async function expressModule(path: string) {
     }
   });
 
+  console.log(chalk.green.bold(`Remove module-ts-nodejs-express`));
+  try {
+    fs.rmSync("./module-ts-nodejs-express", {recursive: true, force: true});
+  } catch (error) {
+    console.log(chalk.red.bold(`exec error: ${error}`));    
+  }  
+
 }
 
 async function cp(path: string[], options: any): Promise<void> {
