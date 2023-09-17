@@ -4,7 +4,7 @@ import fs from 'fs';
 import yaml from 'yaml';
 import copyfiles from 'copyfiles';
 import {exec} from 'node:child_process';
-
+import * as prettier from "prettier";
 
 
 export async function dockerModule(path: string) {
@@ -43,6 +43,19 @@ export async function dockerModule(path: string) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }
 
+  console.log(chalk.green.bold(`Add dependencies to package.json`));
+  let newPackageJsonDoc = {
+    ...packageJsonDoc
+  }
+  newPackageJsonDoc.scripts = {
+    ...packageJsonDoc.scripts,
+    "docker-build": `docker build --pull --rm -f "Dockerfile.azure" -t ${packageJsonDoc.name}:latest "."`,
+  }
+
+  const newPackageJsonDocString = await prettier.format(JSON.stringify(newPackageJsonDoc), {parser: "json"});
+  fs.writeFileSync(`./package.json`, newPackageJsonDocString, 'utf8');
+
+
   console.log(chalk.green.bold(`Remove module-ts-nodejs-docker`));
   try {
     fs.rmSync("./module-ts-nodejs-docker", {recursive: true, force: true});
@@ -50,7 +63,7 @@ export async function dockerModule(path: string) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }
   
-  console.log(`\nYou can now build docker image with: docker build --pull --rm -f "Dockerfile.azure" -t ${packageJsonDoc.name}:latest "."`);
+  console.log(`\nYou can now build docker image with: npm run build-docker`);
   if (!fs.existsSync(`dist`)) {
     console.log(chalk.yellow.bold(`Warning: Missing ./dist. Please build ${packageJsonDoc.name} with npm run build, before building docker image.`));
   }

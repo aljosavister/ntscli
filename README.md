@@ -13,7 +13,7 @@ The command will pull source files from [template-ts-nodejs](https://github.com/
 - Dependencies: dotenv, typescript, prettier, eslint and copyfiles
 - Start and build scripts that will use local tsc
 
-### Modules
+## Modules
 You can add additional module/s to the project.
 
 For example to add express server with example api routes and default public folder, you can run
@@ -27,3 +27,19 @@ Docker module:
 cd myproject
 npx ntscli docker .
 ```
+## Change log
+
+### v1.2.24 [17/09/2023]
+
+- Add docker build script to package.json
+- Use API for prettier
+
+## License
+
+Copyright 2023 aljosa.vister@gmail.com
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+## Disclaimer
+
+`ntscli` is still in alpha phase of development. Please report bugs on https://github.com/aljosavister/ntscli/issues

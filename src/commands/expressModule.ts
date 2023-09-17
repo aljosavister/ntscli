@@ -4,7 +4,7 @@ import fs from 'fs';
 import yaml from 'yaml';
 import copyfiles from 'copyfiles';
 import {exec} from 'node:child_process';
-
+import * as prettier from "prettier";
 
 
 export async function expressModule(path: string) {
@@ -56,14 +56,10 @@ export async function expressModule(path: string) {
     ...packageJsonDoc.devDependencies,
     ...modulePackageJsonDoc.devDependencies
   }  
-  fs.writeFileSync(`./package.json`, JSON.stringify(newPackageJsonDoc), 'utf8');
 
-  console.log(chalk.green.bold(`Run Prettier on package.json`));
-  exec("./node_modules/prettier/bin/prettier.cjs -w package.json", (error, stdout, stderr) => {
-    if (error !== null) {
-        console.log(chalk.red.bold(`Prettier error: ${error}`));
-    }
-  });
+  const newPackageJsonDocString = await prettier.format(JSON.stringify(newPackageJsonDoc), {parser: "json"});
+  fs.writeFileSync(`./package.json`, newPackageJsonDocString, 'utf8');
+
 
   console.log(chalk.green.bold(`Remove module-ts-nodejs-express`));
   try {
