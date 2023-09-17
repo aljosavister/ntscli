@@ -8,7 +8,7 @@ import * as prettier from "prettier";
 
 
 export async function expressModule(path: string) {
-  console.log(chalk.green.bold(`Working directory: ${process.cwd()}`));
+  console.log(`Working directory: ${process.cwd()}`);
 
   if (!fs.existsSync(`${path}/package.json`)) {
     console.log(chalk.red.bold(`Cannot find ${path}/package.json`));
@@ -22,27 +22,27 @@ export async function expressModule(path: string) {
 
   try {
     process.chdir(`./${path}`);
-    console.log(chalk.green.bold(`Working directory: ${process.cwd()}`));
+    console.log(`Working directory: ${process.cwd()}`);
   }
   catch (error) {
     console.log(chalk.red.bold(`chdir error: ${error}`));
   }
 
-  console.log(chalk.green.bold(`Pull module-ts-nodejs-express`));
+  console.log(`Pull module-ts-nodejs-express`);
   try {
     execSync(`git clone --depth=1 https://github.com/aljosavister/module-ts-nodejs-express.git`)
   } catch (error) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }
 
-  console.log(chalk.green.bold(`Copy files`));
+  console.log(`Copy files`);
   try {
     await cp(["module-ts-nodejs-express/src/**/*", "./src/"], {up: 2});
   } catch (error) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }
 
-  console.log(chalk.green.bold(`Add dependencies to package.json`));
+  console.log(`Add dependencies to package.json`);
   let modulePackageJson = fs.readFileSync('./module-ts-nodejs-express/package.json', 'utf8');
   let modulePackageJsonDoc = JSON.parse(modulePackageJson);
   let newPackageJsonDoc = {
@@ -61,7 +61,7 @@ export async function expressModule(path: string) {
   fs.writeFileSync(`./package.json`, newPackageJsonDocString, 'utf8');
 
 
-  console.log(chalk.green.bold(`Remove module-ts-nodejs-express`));
+  console.log(`Remove module-ts-nodejs-express`);
   try {
     fs.rmSync("./module-ts-nodejs-express", {recursive: true, force: true});
   } catch (error) {

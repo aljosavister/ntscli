@@ -29,10 +29,11 @@ npx ntscli docker .
 ```
 ## Change log
 
-### v1.2.25 [17/09/2023]
+### v1.2.26 [17/09/2023]
 
 - Add docker build script to package.json
 - Use API for prettier
+- Remove green colors
 
 ## License
 
