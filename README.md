@@ -42,4 +42,4 @@ Permission to use, copy, modify, and/or distribute this software for any purpose
 
 ## Disclaimer
 
-`ntscli` is still in alpha phase of development. Please report bugs on https://github.com/aljosavister/ntscli/issues
+`ntscli` is still in alpha phase of development. Please report issues to [aljosa vister](https://github.com/aljosavister/ntscli/issues)
