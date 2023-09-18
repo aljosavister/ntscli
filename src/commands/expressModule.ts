@@ -45,6 +45,7 @@ export async function expressModule(path: string) {
   console.log(`Add dependencies to package.json`);
   let modulePackageJson = fs.readFileSync('./module-ts-nodejs-express/package.json', 'utf8');
   let modulePackageJsonDoc = JSON.parse(modulePackageJson);
+  modulePackageJsonDoc.author = "";
   let newPackageJsonDoc = {
     ...packageJsonDoc
   }
@@ -66,8 +67,11 @@ export async function expressModule(path: string) {
     fs.rmSync("./module-ts-nodejs-express", {recursive: true, force: true});
   } catch (error) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
-  }  
+  }
 
+  console.log(chalk.green.bold(`\nYou can now add contents from express-example.ts to your startup file/process`));
+
+  return
 }
 
 async function cp(path: string[], options: any): Promise<void> {

@@ -29,11 +29,10 @@ npx ntscli docker .
 ```
 ## Change log
 
-### v1.2.26 [17/09/2023]
+### v1.2.27 [18/09/2023]
 
-- Add docker build script to package.json
-- Use API for prettier
-- Remove green colors
+- Remove author from template after pull
+- Fix typos
 
 ## License
 
@@ -43,4 +42,4 @@ Permission to use, copy, modify, and/or distribute this software for any purpose
 
 ## Disclaimer
 
-`ntscli` is still in alpha phase of development. Please report issues to [aljosa vister](https://github.com/aljosavister/ntscli/issues)
+`ntscli` is still in alpha phase of development and it is provided for educational purposes and should **not** be used in production environments. It has not undergone the necessary testing, security checks, and optimizations required for reliable and secure production use. Deploying it in such contexts may lead to unforeseen issues and vulnerabilities. Use it at your own risk, and exercise caution when considering production deployment.

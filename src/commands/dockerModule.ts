@@ -63,7 +63,7 @@ export async function dockerModule(path: string) {
     console.log(chalk.red.bold(`exec error: ${error}`));    
   }
   
-  console.log(`\nYou can now build docker image with: npm run docker-build`);
+  console.log(chalk.green.bold(`\nYou can now build docker image with: npm run docker-build`));
   if (!fs.existsSync(`dist`)) {
     console.log(chalk.yellow.bold(`Warning: Missing ./dist. Please build ${packageJsonDoc.name} with npm run build, before building docker image.`));
   }
