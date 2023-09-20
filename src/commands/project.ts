@@ -6,7 +6,7 @@ import * as prettier from "prettier";
 
 export async function projectName(name: string) {
   if (fs.existsSync(name)) {
-    console.log(chalk.red.bold(`Path ${name} already exists`));   
+    console.error(chalk.red.bold(`Path ${name} already exists`));   
     return;
   }
 
@@ -14,7 +14,7 @@ export async function projectName(name: string) {
   try {
     execSync(`git clone --depth=1 https://github.com/aljosavister/template-ts-nodejs.git ${name}`)
   } catch (error) {
-    console.log(chalk.red.bold(`exec error: ${error}`));    
+    console.error(chalk.red.bold(`exec error: ${error}`));    
   }
 
   try {
@@ -22,7 +22,7 @@ export async function projectName(name: string) {
     console.log(`Working directory: ${process.cwd()}`);
   }
   catch (error) {
-    console.log(chalk.red.bold(`chdir error: ${error}`));
+    console.error(chalk.red.bold(`chdir error: ${error}`));
   } 
 
   console.log(`Change package.json name to ${name}`);
@@ -43,13 +43,13 @@ export async function projectName(name: string) {
   try {
     fs.rmSync(".git", {recursive: true, force: true});
   } catch (error) {
-    console.log(chalk.red.bold(`exec error: ${error}`));    
+    console.error(chalk.red.bold(`exec error: ${error}`));    
   }
 
   console.log(`Installing node modules...`);
   try {
     execSync("npm install")
   } catch (error) {
-    console.log(chalk.red.bold(`npm error: ${error}`));
+    console.error(chalk.red.bold(`npm error: ${error}`));
   }
 }

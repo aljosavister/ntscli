@@ -38,7 +38,6 @@
     "commander": "^11.0.0",
     "copyfiles": "^2.4.1",
     "run-script-os": "^1.1.6",
-    "yaml": "^2.3.2",
     "prettier": "^3.0.3"
   },
   "bin": {

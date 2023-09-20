@@ -1,9 +1,7 @@
 import chalk from 'chalk';
 import { execSync } from "child_process";
 import fs from 'fs';
-import yaml from 'yaml';
 import copyfiles from 'copyfiles';
-import {exec} from 'node:child_process';
 import * as prettier from "prettier";
 
 
@@ -11,7 +9,7 @@ export async function expressModule(path: string) {
   console.log(`Working directory: ${process.cwd()}`);
 
   if (!fs.existsSync(`${path}/package.json`)) {
-    console.log(chalk.red.bold(`Cannot find ${path}/package.json`));
+    console.error(chalk.red.bold(`Cannot find ${path}/package.json`));
     return;
   }
 
@@ -25,21 +23,21 @@ export async function expressModule(path: string) {
     console.log(`Working directory: ${process.cwd()}`);
   }
   catch (error) {
-    console.log(chalk.red.bold(`chdir error: ${error}`));
+    console.error(chalk.red.bold(`chdir error: ${error}`));
   }
 
   console.log(`Pull module-ts-nodejs-express`);
   try {
     execSync(`git clone --depth=1 https://github.com/aljosavister/module-ts-nodejs-express.git`)
   } catch (error) {
-    console.log(chalk.red.bold(`exec error: ${error}`));    
+    console.error(chalk.red.bold(`exec error: ${error}`));    
   }
 
   console.log(`Copy files`);
   try {
     await cp(["module-ts-nodejs-express/src/**/*", "./src/"], {up: 2});
   } catch (error) {
-    console.log(chalk.red.bold(`exec error: ${error}`));    
+    console.error(chalk.red.bold(`exec error: ${error}`));    
   }
 
   console.log(`Add dependencies to package.json`);
@@ -66,7 +64,7 @@ export async function expressModule(path: string) {
   try {
     fs.rmSync("./module-ts-nodejs-express", {recursive: true, force: true});
   } catch (error) {
-    console.log(chalk.red.bold(`exec error: ${error}`));    
+    console.error(chalk.red.bold(`exec error: ${error}`));    
   }
 
   console.log(chalk.green.bold(`\nYou can now add contents from express-example.ts to your startup file/process`));
