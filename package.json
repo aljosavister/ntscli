@@ -1,6 +1,6 @@
 {
   "name": "ntscli",
-  "version": "1.2.28",
+  "version": "1.2.29",
   "description": "Node.js and TypeScript project creator with ability to add modules.",
   "exports": "./dist/index.js",
   "main": "dist/index.js",
