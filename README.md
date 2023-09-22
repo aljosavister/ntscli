@@ -13,6 +13,13 @@ The command will pull source files from [template-ts-nodejs](https://github.com/
 - Dependencies: dotenv, typescript, prettier, eslint and copyfiles
 - Start and build scripts that will use local tsc
 
+## Prerequisites
+
+Your environment must meet these prerequisites:
+- Node.js
+- npm
+- git
+
 ## Modules
 You can add additional module/s to the project.
 
@@ -29,7 +36,7 @@ npx ntscli docker .
 ```
 ## Change log
 
-### v1.2.32 [22/09/2023]
+### v1.2.33 [22/09/2023]
 
 - Fixing windows path problems
 - Fixing removal of stale directories on windows
