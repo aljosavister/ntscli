@@ -36,7 +36,7 @@ npx ntscli docker .
 ```
 ## Change log
 
-### v1.2.33 [22/09/2023]
+### v1.2.34 [22/09/2023]
 
 - Fixing windows path problems
 - Fixing removal of stale directories on windows
