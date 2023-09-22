@@ -54,19 +54,22 @@ export async function dockerModule(path: string) {
   fs.writeFileSync(`package.json`, newPackageJsonDocString, 'utf8');
 
 
-  console.log(`Remove module-ts-nodejs-docker`);
-  try {
-    fs.rmSync("module-ts-nodejs-docker", {recursive: true, force: true});
-  } catch (error) {
-    console.error(chalk.red.bold(`exec error: ${error}`));    
-  }
-  
-  console.log(chalk.green.bold(`\nYou can now build docker image with: npm run docker-build`));
-  if (!fs.existsSync(`dist`)) {
-    console.log(chalk.yellow.bold(`Warning: Missing dist. Please build ${packageJsonDoc.name} with npm run build, before building docker image.`));
-  }
 
-  return;
+  setTimeout(() => {
+    console.log(`Remove module-ts-nodejs-docker`);
+    try {
+      fs.rmSync("module-ts-nodejs-docker", {recursive: true, force: true});
+    } catch (error) {
+      console.error(chalk.red.bold(`exec error: ${error}`));    
+    }
+    
+    console.log(chalk.green.bold(`\nYou can now build docker image with: npm run docker-build`));
+    if (!fs.existsSync(`dist`)) {
+      console.log(chalk.yellow.bold(`Warning: Missing dist. Please build ${packageJsonDoc.name} with npm run build, before building docker image.`));
+    }
+  
+    return;
+  }, 500);
 }
 
 async function cp(path: string[], options: any): Promise<void> {

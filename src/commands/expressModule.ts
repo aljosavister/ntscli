@@ -59,17 +59,18 @@ export async function expressModule(path: string) {
   const newPackageJsonDocString = await prettier.format(JSON.stringify(newPackageJsonDoc), {parser: "json"});
   fs.writeFileSync(`package.json`, newPackageJsonDocString, 'utf8');
 
-
-  console.log(`Remove module-ts-nodejs-express`);
-  try {
-    fs.rmSync("module-ts-nodejs-express", {recursive: true, force: true});
-  } catch (error) {
-    console.error(chalk.red.bold(`exec error: ${error}`));    
-  }
-
-  console.log(chalk.green.bold(`\nYou can now add contents from express-example.ts to your startup file/process`));
-
-  return
+  setTimeout(()=> {
+    console.log(`Remove module-ts-nodejs-express`);
+    try {
+      fs.rmSync("module-ts-nodejs-express", {recursive: true, force: true});
+    } catch (error) {
+      console.error(chalk.red.bold(`exec error: ${error}`));    
+    }
+  
+    console.log(chalk.green.bold(`\nYou can now add contents from express-example.ts to your startup file/process`));
+  
+    return
+  }, 500);
 }
 
 async function cp(path: string[], options: any): Promise<void> {
