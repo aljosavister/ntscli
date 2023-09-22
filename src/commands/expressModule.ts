@@ -66,6 +66,14 @@ export async function expressModule(path: string) {
     } catch (error) {
       console.error(chalk.red.bold(`exec error: ${error}`));    
     }
+
+    console.log(`Installing node modules...`);
+    try {
+      execSync("npm install")
+    } catch (error) {
+      console.error(chalk.red.bold(`npm error: ${error}`));
+      return;
+    }    
   
     console.log(chalk.green.bold(`\nYou can now add contents from express-example.ts to your startup file/process`));
   
