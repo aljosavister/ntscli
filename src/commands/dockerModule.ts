@@ -19,7 +19,7 @@ export async function dockerModule(path: string) {
   console.log(`Add docker for the ${packageJsonDoc.name} project ...`);
 
   try {
-    process.chdir(`./${path}`);
+    process.chdir(`${path}`);
     console.log(`Working directory: ${process.cwd()}`);
   }
   catch (error) {
@@ -35,8 +35,8 @@ export async function dockerModule(path: string) {
 
   console.log(`Copy files from module-ts-nodejs-docker`);
   try {
-    await cp(["module-ts-nodejs-docker/docker/*", "./docker"], {up: 2});
-    await cp(["module-ts-nodejs-docker/Dockerfile.azure", "./"], {up: 1});
+    await cp(["module-ts-nodejs-docker/docker/*", "docker"], {up: 2});
+    await cp(["module-ts-nodejs-docker/Dockerfile.azure", "."], {up: 1});
   } catch (error) {
     console.error(chalk.red.bold(`exec error: ${error}`));    
   }
@@ -51,19 +51,19 @@ export async function dockerModule(path: string) {
   }
 
   const newPackageJsonDocString = await prettier.format(JSON.stringify(newPackageJsonDoc), {parser: "json"});
-  fs.writeFileSync(`./package.json`, newPackageJsonDocString, 'utf8');
+  fs.writeFileSync(`package.json`, newPackageJsonDocString, 'utf8');
 
 
   console.log(`Remove module-ts-nodejs-docker`);
   try {
-    fs.rmSync("./module-ts-nodejs-docker", {recursive: true, force: true});
+    fs.rmSync("module-ts-nodejs-docker", {recursive: true, force: true});
   } catch (error) {
     console.error(chalk.red.bold(`exec error: ${error}`));    
   }
   
   console.log(chalk.green.bold(`\nYou can now build docker image with: npm run docker-build`));
   if (!fs.existsSync(`dist`)) {
-    console.log(chalk.yellow.bold(`Warning: Missing ./dist. Please build ${packageJsonDoc.name} with npm run build, before building docker image.`));
+    console.log(chalk.yellow.bold(`Warning: Missing dist. Please build ${packageJsonDoc.name} with npm run build, before building docker image.`));
   }
 
   return;

@@ -29,10 +29,9 @@ npx ntscli docker .
 ```
 ## Change log
 
-### v1.2.28 [18/09/2023]
+### v1.2.30 [22/09/2023]
 
-- Remove author from template after pull
-- Fix typos
+- Fixing windows path problems
 
 ## License
 
