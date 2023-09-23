@@ -11,7 +11,7 @@ The command will pull source files from [template-ts-nodejs](https://github.com/
 - Project file for Visual Studio Code with launcher and tasks
 - ESM
 - Dependencies: dotenv, typescript, prettier, eslint and copyfiles
-- Start and build scripts that will use local tsc
+- Start and build scripts that will use tsc from the project itself
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Your environment must meet these prerequisites:
 ## Modules
 You can add additional module/s to the project.
 
-For example to add express server with example api routes and default public folder, you can run
+For example to add **express web server** with example api routes and default public folder, you can run:
 ```
 cd myproject
 npx ntscli express .
