@@ -42,12 +42,6 @@ npx ntscli docker .
 - Fixing removal of stale directories on windows
 - Install npm modules after express serves is added
 
-## License
-
-Copyright 2023 aljosa.vister@gmail.com
-
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-
 ## Disclaimer
 
 `ntscli` is still in alpha phase of development and it is provided for educational purposes and should **not** be used in production environments. It has not undergone the necessary testing, security checks, and optimizations required for reliable and secure production use. Deploying it in such contexts may lead to unforeseen issues and vulnerabilities. Use it at your own risk, and exercise caution when considering production deployment.
