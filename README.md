@@ -23,17 +23,22 @@ Your environment must meet these prerequisites:
 ## Modules
 You can add additional module/s to the project.
 
-For example to add **express web server** with example api routes and default public folder, you can run:
+### Express module
+- Documentation: [module-ts-nodejs-express](https://github.com/aljosavister/module-ts-nodejs-express)
+- To add **express web server** with example api routes and default public folder, you can run:
 ```
 cd myproject
 npx ntscli express .
 ```
 
-Docker module:
+### Docker module
+- Documentation: [module-ts-nodejs-docker](https://github.com/aljosavister/module-ts-nodejs-docker)
+- Do add Dockerfile, configured for specificaly for Azure webapps, you can run:
 ```
 cd myproject
 npx ntscli docker .
 ```
+
 ## Change log
 
 ### v1.2.35 [22/09/2023]
