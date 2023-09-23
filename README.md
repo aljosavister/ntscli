@@ -41,11 +41,9 @@ npx ntscli docker .
 
 ## Change log
 
-### v1.2.35 [22/09/2023]
+### v1.2.36 [23/09/2023]
 
-- Fixing windows path problems
-- Fixing removal of stale directories on windows
-- Install npm modules after express serves is added
+- Fix documentation and license
 
 ## Disclaimer
 
