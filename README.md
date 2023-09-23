@@ -33,7 +33,7 @@ npx ntscli express .
 
 ### Docker module
 - Documentation: [module-ts-nodejs-docker](https://github.com/aljosavister/module-ts-nodejs-docker)
-- Do add Dockerfile, configured for specificaly for Azure webapps, you can run:
+- To add Dockerfile, configured specifically for Azure webapp, you can run:
 ```
 cd myproject
 npx ntscli docker .
