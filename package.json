@@ -27,7 +27,7 @@
     "url": "https://github.com/aljosavister/ntscli.git"
   },
   "author": "Aljosa Vister",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/copyfiles": "^2.4.1",
     "@types/node": "^20.5.9",
