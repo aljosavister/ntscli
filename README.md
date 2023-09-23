@@ -11,7 +11,7 @@ The command will pull source files from [template-ts-nodejs](https://github.com/
 - Project file for Visual Studio Code with launcher and tasks
 - ESM
 - Dependencies: dotenv, typescript, prettier, eslint and copyfiles
-- Start and build scripts that will use tsc from the project itself
+- Start and build scripts that will use 'tsc' from within the project.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ npx ntscli docker .
 
 ## Change log
 
-### v1.2.36 [23/09/2023]
+### v1.2.37 [23/09/2023]
 
 - Fix documentation and license
 
