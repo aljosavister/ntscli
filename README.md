@@ -41,7 +41,7 @@ npx ntscli docker .
 
 ## Change log
 
-### v1.2.37 [23/09/2023]
+### v1.2.38 [23/09/2023]
 
 - Fix documentation and license
 
