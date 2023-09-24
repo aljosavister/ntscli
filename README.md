@@ -9,7 +9,8 @@ npx ntscli init myproject
 
 The command will pull source files from [template-ts-nodejs](https://github.com/aljosavister/template-ts-nodejs.git) and the boilerplate will be initialized with:
 - Project file for Visual Studio Code with launcher and tasks
-- ESM
+- Targets ECMAScript 2022 with Node.js-style module resolution
+- Output directory for transpiled code: ./dist
 - Dependencies: dotenv, typescript, prettier, eslint and copyfiles
 - Start and build scripts that will use 'tsc' from within the project.
 
