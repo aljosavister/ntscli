@@ -10,7 +10,7 @@ This document outlines the coding standards for the project based on the configu
 
 - The coding standards extend the configuration from **"tslint:recommended"**, which includes recommended coding standards and rules for TypeScript projects.
 
-## Custom Rules
+## Custom TSLint Rules
 
 ### `no-console`
 
@@ -28,9 +28,15 @@ This document outlines the coding standards for the project based on the configu
 
 - Do not enforce the use of trailing commas in lists or object literals. Trailing commas can be omitted.
 
+## Prettier Rules
+
+- Prettier is configured with the following rules:
+  - `arrowParens`: Always include parentheses around arrow function parameters.
+  - `singleQuote`: Do not use single quotes for string literals; use double quotes instead.
+
 ## Rules Directory
 
 - There are no custom rule directories specified in this configuration.
 
-These coding standards provide flexibility in coding style while still adhering to best practices recommended by the `"tslint:recommended"` configuration. You can customize or add more rules as needed for your specific project requirements.
+These coding standards provide flexibility in coding style while still adhering to best practices recommended by the `"tslint:recommended"` configuration and Prettier rules. You can customize or add more rules as needed for your specific project requirements.
 
