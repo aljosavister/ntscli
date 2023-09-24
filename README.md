@@ -1,4 +1,4 @@
-# Create Node.js TypeScript project
+# Node.js TypeScript project creator
 
 This command line can be used to create an empty Node.js projects with initial TypeScript configuration files.
 
