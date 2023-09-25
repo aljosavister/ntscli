@@ -42,7 +42,7 @@ npx ntscli docker .
 
 ## Change log
 
-### v1.2.39 [24/09/2023]
+### v1.2.40 [24/09/2023]
 
 - Add contributing, style guidelines and code of conduct
 
