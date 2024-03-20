@@ -5,6 +5,10 @@ This command line can be used to create an empty Node.js projects with initial T
 A new project can be initialized with ntscli
 ```
 npx ntscli init myproject
+
+or from custom repository with
+
+npx ntscli git myproject 'https://github.com/aljosavister/template-ts-nodejs.git'
 ```
 
 The command will pull source files from [template-ts-nodejs](https://github.com/aljosavister/template-ts-nodejs.git) and the boilerplate will be initialized with:
@@ -42,9 +46,9 @@ npx ntscli docker .
 
 ## Change log
 
-### v1.2.40 [24/09/2023]
+### v1.2.41 [20/03/2024]
 
-- Add contributing, style guidelines and code of conduct
+- Add ability to initialize from custom git repo.
 
 ## Disclaimer
 

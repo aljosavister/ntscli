@@ -15,4 +15,8 @@ program.command('express').description('Add Express server with sample api route
 program.command('docker').description('Add Docker configuration')
   .argument('<path>', '<path> of the project to add docker configuration files')
   .action(dockerModule);
+program.command('git').description('Clones the project from a custom git repository and then executes `npm run initialize`. Warning, third party projects can contain exploits and viruses.')
+  .argument('<new name>', 'Initialize project from custom git repository with <new name>')
+  .argument('<repo>', 'Git repository')
+  .action(projectName);
 program.parse();

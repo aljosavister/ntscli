@@ -3,7 +3,14 @@ import { execSync } from "child_process";
 import fs, { PathLike } from 'fs';
 import * as prettier from "prettier";
 
-export async function projectName(name: string) {
+export async function projectName(name: string, repo?: string) {
+
+  if (repo) {
+    console.log(chalk.green.bold(`Initialize project from ${repo}`));   
+  } else {
+    repo = 'https://github.com/aljosavister/template-ts-nodejs.git';
+  }
+
   if (fs.existsSync(name)) {
     console.error(chalk.red.bold(`Path ${name} already exists`));   
     return;
@@ -20,7 +27,7 @@ export async function projectName(name: string) {
 
   console.log(`Pull template-ts-nodejs into ${name}`);
   try {
-    execSync(`git clone --depth=1 https://github.com/aljosavister/template-ts-nodejs.git ${name}`)
+    execSync(`git clone --depth=1 ${repo} ${name}`)
   } catch (error) {
     console.error(chalk.red.bold(`exec error: ${error}`));    
     return;
