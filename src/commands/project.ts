@@ -5,7 +5,7 @@ import * as prettier from "prettier";
 
 export async function projectName(name: string, repo?: string) {
 
-  if (repo) {
+  if (repo && repo.length > 0) {
     console.log(chalk.green.bold(`Initialize project from ${repo}`));   
   } else {
     repo = 'https://github.com/aljosavister/template-ts-nodejs.git';
