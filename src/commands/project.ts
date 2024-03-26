@@ -73,13 +73,15 @@ export async function projectName(name: string, repo?: string) {
   }
 
   if (repo && repo.length > 0) {
-    console.log(`Building and initializing the project ${name}`);
+    console.log(`Building the project ${name}`);
     try {
-      exec("npm run build; npm run initialize")
+      exec("npm run build")
     } catch (error) {
       console.error(chalk.red.bold(`npm error: ${error}`));
       return;
     }
+
+    console.log(chalk.green.bold(`\n Now you can cd into ${name} and execute npm run initialize`));
   }
   
   return;
