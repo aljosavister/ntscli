@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { execSync } from "child_process";
+import { exec, execSync } from "child_process";
 import fs, { PathLike } from 'fs';
 import * as prettier from "prettier";
 
@@ -70,6 +70,16 @@ export async function projectName(name: string, repo?: string) {
   } catch (error) {
     console.error(chalk.red.bold(`npm error: ${error}`));
     return;
+  }
+
+  if (repo && repo.length > 0) {
+    console.log(`Building and initializing the project ${name}`);
+    try {
+      exec("npm run build; npm run initialize")
+    } catch (error) {
+      console.error(chalk.red.bold(`npm error: ${error}`));
+      return;
+    }
   }
   
   return;
