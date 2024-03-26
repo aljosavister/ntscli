@@ -81,7 +81,7 @@ export async function projectName(name: string, repo?: string) {
       return;
     }
 
-    console.log(chalk.green.bold(`\n Now you can cd into ${name} and execute npm run initialize`));
+    console.log(chalk.green.bold(`\nNow you can cd into ${name} and execute npm run initialize`));
   }
   
   return;
