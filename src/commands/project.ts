@@ -46,7 +46,7 @@ export async function projectName(name: string, repo?: string) {
   let file = fs.readFileSync('package.json', 'utf8');
   let doc = JSON.parse(file);
   doc.name = name;
-  doc.version = '1.0.0';
+  doc.version = "1.0.0";
   let docString = await prettier.format(JSON.stringify(doc), {parser: "json"});
   fs.writeFileSync('package.json', docString, 'utf8');
   
