@@ -46,9 +46,9 @@ npx ntscli docker .
 
 ## Change log
 
-### v1.2.41 [20/03/2024]
+### v1.2.50 [02/04/2024]
 
-- Add ability to initialize from custom git repo.
+- Project version to 1.0.0
 
 ## Disclaimer
 
