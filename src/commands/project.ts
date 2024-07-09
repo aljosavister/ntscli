@@ -44,17 +44,17 @@ export async function projectName(name: string, repo?: string) {
 
   console.log(`Change package.json name to ${name}`);
   let file = fs.readFileSync('package.json', 'utf8');
-  let doc = JSON.parse(file);
-  doc.name = name;
-  doc.version = "1.0.0";
-  let docString = await prettier.format(JSON.stringify(doc), {parser: "json"});
-  fs.writeFileSync('package.json', docString, 'utf8');
+  let packageDoc = JSON.parse(file);
+  packageDoc.name = name;
+  packageDoc.version = "1.0.0";
+  let packageDocString = await prettier.format(JSON.stringify(packageDoc), {parser: "json"});
+  fs.writeFileSync('package.json', packageDocString, 'utf8');
   
   console.log(`Change default.code-workspace name to ${name}`);
   file = fs.readFileSync('default.code-workspace', 'utf8');
-  doc = JSON.parse(file);
+  let doc = JSON.parse(file);
   doc.folders[0].name = name;
-  docString = await prettier.format(JSON.stringify(doc), {parser: "json"});
+  let docString = await prettier.format(JSON.stringify(doc), {parser: "json"});
   fs.writeFileSync('default.code-workspace', docString, 'utf8');
 
   console.log(`Remove .git repository`);
@@ -82,7 +82,12 @@ export async function projectName(name: string, repo?: string) {
       return;
     }
 
-    console.log(chalk.green.bold(`\nNow you can cd into ${name} and execute npm run initialize`));
+
+    if (packageDoc && packageDoc.scripts && packageDoc.scripts.initialize) {
+      console.log(chalk.green.bold(`\nNow you can cd into ${name} and execute npm run initialize`));
+    } else {
+      console.log(chalk.green.bold(`\nProject ${name} installed`));
+    }
   }
   
   return;
