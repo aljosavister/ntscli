@@ -46,9 +46,10 @@ npx ntscli docker .
 
 ## Change log
 
-### v1.2.50 [02/04/2024]
+### v1.3.0 [09/07/2024]
 
-- Project version to 1.0.0
+- Update eslint in template-ts-nodejs
+- Check if initialize script exists in template
 
 ## Disclaimer
 
